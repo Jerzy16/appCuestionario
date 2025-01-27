@@ -14,10 +14,28 @@ export class UserService {
     getAll(): Observable<any> {
       return this.httpClient.get<any>(`${this.apiUrl}/getAll`);  
     }
+    getAllUser(id: number): Observable<any> {
+      return this.httpClient.get<any>(`${this.apiUrl}/getAllUser/${id}`);  
+    }
     insert(user: any): Observable<any>{
       return this.httpClient.post<any>(`${this.apiUrl}/usuario`, user); 
     }
     delete(id:number): Observable<any>{
       return this.httpClient.delete<any>(`${this.apiUrl}/usuario/${id}`); 
+    }
+    updateProfile(user: any, usuario: any): Observable<any>{
+      return this.httpClient.put<any>(`${this.apiUrl}/usuariok/${usuario}`, user); 
+    }
+    getRoles(): Observable<any>{
+      return this.httpClient.get<any>(`${this.apiUrl}/roles`); 
+    }
+    createRoles(role: any, id:number): Observable<any>{
+      return this.httpClient.post<any>(`${this.apiUrl}/roles/${id}`, role); 
+    }
+    usuarioRoles(): Observable<any>{
+      return this.httpClient.get<any>(`${this.apiUrl}/usuario-roles`); 
+    }
+    deleteRoles(id: number, admiId: number): Observable<any>{
+      return this.httpClient.delete<any>(`${this.apiUrl}/roles/${id}/${admiId}`); 
     }
 }

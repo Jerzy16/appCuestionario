@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PreguntaComponent } from '../../../components/pregunta/pregunta.component';
 import { CommonModule } from '@angular/common';
 import { CuestionarioService } from '../../../api/cuestionario.service';
 import { Router } from '@angular/router';

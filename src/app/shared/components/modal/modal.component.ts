@@ -1,14 +1,13 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { CuestionarioService } from '../../api/cuestionario.service';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
+import { CuestionarioService } from '../../../api/cuestionario.service';
 
 @Component({
   selector: 'app-modal',
   imports: [FontAwesomeModule, CommonModule],
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css'
 })
 export class ModalComponent {
   @Input() cliente: any;

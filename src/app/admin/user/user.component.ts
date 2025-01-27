@@ -49,7 +49,28 @@ export class UserComponent {
   }
 
   getUSers(): void {
-    this.userService.getAll().subscribe(
+    const storedUser = localStorage.getItem('user');
+        if (!storedUser) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'No se encontró información del usuario. Por favor, inténtalo nuevamente.',
+          });
+          return;
+        }
+      
+        const user = JSON.parse(storedUser);
+        const codUsu = user?.CodUsu;
+      
+        if (!codUsu) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'El usuario no tiene un código asignado.',
+          });
+          return;
+        }
+    this.userService.getAllUser(codUsu).subscribe(
       (data) => {
         this.users = data.user;
         console.log(this.users);

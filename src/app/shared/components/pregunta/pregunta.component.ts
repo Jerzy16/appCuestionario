@@ -5,7 +5,6 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   selector: 'app-pregunta',
   imports: [ReactiveFormsModule],
   templateUrl: './pregunta.component.html',
-  styleUrl: './pregunta.component.css',
   standalone: true
 })
 export class PreguntaComponent {
