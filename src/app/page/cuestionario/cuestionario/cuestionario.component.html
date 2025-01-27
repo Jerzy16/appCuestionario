@@ -1,8 +1,6 @@
 <div class="bg-fondo p-4 flex items-center flex-col font-sans">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4">
-    <div
-      class="bg-white col-span-1 md:col-span-2 rounded-xl p-4 flex text-justify flex-col gap-y-4 mb-8"
-    >
+    <div class="bg-white col-span-1 md:col-span-2 rounded-xl p-4 flex text-justify flex-col gap-y-4 mb-8">
       <h2 class="text-center text-gray-800 font-sans text-2xl">
         Cuestionario sobre Salud Personal-9 (PHQ-9)
       </h2>
@@ -18,12 +16,12 @@
       </ul>
     </div>
     <div
-      class="bg-white rounded-xl p-4 flex text-justify text-black flex-col gap-y-4 mb-8"
-    >
+      class="bg-white rounded-xl p-4 flex text-justify text-black flex-col gap-y-4 mb-8" >
       <span class="text-center text-xl font-bold">Encuestada</span>
       <ul class="flex gap-y-4 flex-col font-sans">
         <li class="capitalize text-lg font-bold text-gray-800 ">
-          {{ cliente[0].NomClie }} {{ cliente[0].AppClie }}
+          {{ cliente[0].NomClie }} 
+          {{ cliente[0].AppClie }}
           {{ cliente[0].ApmClie }}
         </li>
         <li>Telefono: {{ cliente[0].CelClie }}</li>
@@ -32,27 +30,16 @@
       </ul>
     </div>
   </div>
-  <form
-    [formGroup]="form"
-    (ngSubmit)="onSubmit()"
-    class="p-4 rounded-xl"
-  >
+  <form [formGroup]="form"(ngSubmit)="onSubmit()"class="p-4 rounded-xl">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="flex bg-white  flex-col gap-y-4 mb-4 p-2 md:p-4 rounded-lg">
       <span class="text-lg mb-2">1. ¿Qué tan seguido has tenido poco interés o placer en hacer cosas?</span>
       <div class="options flex justify-center gap-4">
         <label class="flex items-center cursor-pointer">
-          <input
-            type="radio"
-            formControlName="Pre1"
-            [value]="0"
-            class="peer hidden"
-          />
+          <input type="radio" formControlName="Pre1" [value]="0" class="peer hidden"/>
           <span
             class="w-8 h-8 rounded-full bg-green-600 text-white border border-gray-400 flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all"
-          >
-            0
-          </span>
+          > 0</span>
         </label>
         <label class="flex items-center cursor-pointer">
           <input
